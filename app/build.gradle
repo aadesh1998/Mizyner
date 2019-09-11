@@ -37,8 +37,6 @@ dependencies {
 }
 
 
-
-
 sceneform.asset('Sample Data Directory/office_chair.obj',
         'default',
         'Sample Data Directory/office_chair.sfa',
