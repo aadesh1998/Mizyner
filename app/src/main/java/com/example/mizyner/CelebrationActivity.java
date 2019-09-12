@@ -14,18 +14,18 @@ import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
-public class MainActivity extends AppCompatActivity {
+public class CelebrationActivity extends AppCompatActivity {
     private ArFragment arFragment;
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_celebration);
         arFragment= (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
         arFragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
             Anchor anchor=hitResult.createAnchor();
             ModelRenderable.builder()
-                    .setSource(this, Uri.parse("couchTable.sfb"))
+                    .setSource(this, Uri.parse("christmas_tree.sfb"))
                     .build()
                     .thenAccept(modelRenderable -> addModelToScene(anchor,modelRenderable))
                     .exceptionally(throwable -> {
@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
                     });
         });
     }
-
     private void addModelToScene(Anchor anchor, ModelRenderable modelRenderable) {
         AnchorNode anchorNode=new AnchorNode(anchor);
         TransformableNode transformableNode=new TransformableNode(arFragment.getTransformationSystem());

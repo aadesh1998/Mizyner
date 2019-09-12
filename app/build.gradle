@@ -42,3 +42,14 @@ sceneform.asset('Sample Data Directory/office_chair.obj',
         'default',
         'Sample Data Directory/office_chair.sfa',
         'src/main/assets/office_chair')
+
+
+sceneform.asset('Sample Data Directory/couchTable.obj',
+        'default',
+        'Sample Data Directory/couchTable.sfa',
+        'src/main/assets/couchTable')
+
+sceneform.asset('Sample Data Directory/christmas_tree.obj',
+        'default',
+        'Sample Data Directory/christmas_tree.sfa',
+        'src/main/assets/christmas_tree')
