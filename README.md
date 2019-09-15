@@ -1,2 +1,2 @@
 # Mizyner
-AR Core based interior designer
+AR based interior designer
