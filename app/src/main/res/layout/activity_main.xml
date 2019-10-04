@@ -11,4 +11,89 @@
         android:id="@+id/arFragment"
         android:name="com.google.ar.sceneform.ux.ArFragment"/>
 
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="100dp">
+           <androidx.appcompat.widget.AppCompatImageView
+
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/carpet"
+               android:id="@+id/carpet"
+
+               />
+           <androidx.appcompat.widget.AppCompatImageView
+
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/couchtable"
+               android:id="@+id/couchTable"
+
+               />
+           <androidx.appcompat.widget.AppCompatImageView
+
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/sofa2"
+               android:id="@+id/sofa"
+
+               />
+           <androidx.appcompat.widget.AppCompatImageView
+
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/plant1"
+               android:id="@+id/plant1"
+
+               />
+           <androidx.appcompat.widget.AppCompatImageView
+
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/plant2"
+               android:id="@+id/plant2"
+
+               />
+           <androidx.appcompat.widget.AppCompatImageView
+
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/lamp"
+               android:id="@+id/lamp"
+
+               />
+           <androidx.appcompat.widget.AppCompatImageView
+
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/switches"
+               android:id="@+id/switches"
+
+               />
+           <androidx.appcompat.widget.AppCompatImageView
+
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/windowcurtain"
+               android:id="@+id/windowcurtain"
+
+               />
+           <androidx.appcompat.widget.AppCompatImageView
+
+               android:layout_width="100dp"
+               android:layout_height="wrap_content"
+               android:src="@drawable/wall_flat_tv"
+               android:id="@+id/tv"
+
+               />
+
+
+       </LinearLayout>
+
+    </HorizontalScrollView>
+
 </RelativeLayout>

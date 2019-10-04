@@ -12,6 +12,7 @@
         <activity android:name=".CelebrationActivity"></activity>
         <activity android:name=".OfficeActivity" />
         <activity android:name=".HomeActivity" />
+        <activity android:name=".SplashActivity2" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.Splash">
