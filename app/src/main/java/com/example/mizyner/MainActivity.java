@@ -19,6 +19,8 @@ import com.google.ar.sceneform.rendering.ViewRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ArFragment arFragment;
     private ModelRenderable carpetRenderable,
@@ -34,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     View arrayView[];
     ViewRenderable name_object;
     int selected = 1;
-
-
+  public static ArrayList<String> selectedMain = new ArrayList<>();
+    TextView saveButton;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         arFragment= (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
-
+        saveButton = findViewById(R.id.saveButton);
         carpet = (ImageView)findViewById(R.id.carpet);
         couchTable = (ImageView)findViewById(R.id.couchTable);
         sofa = (ImageView)findViewById(R.id.sofa);
@@ -68,13 +70,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 createModel(anchorNode,selected);
 
         });
+
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(selectedMain.size() == 0){
+
+                    Toast.makeText(MainActivity.this, "Please select atleast one", Toast.LENGTH_SHORT).show();
+                }else{
+                    startActivity(new Intent(getApplicationContext(),SelectedItemActivity.class));
+                }
+
+
+            }
+        });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void setupModel() {
-
-
-
 
         ModelRenderable.builder()
                 .setSource(this, R.raw.carpet)
@@ -108,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .build().thenAccept(renderable -> plant1Renderable = renderable)
                 .exceptionally(
                         throwable -> {
-                            Toast.makeText(this, "Unable to load Plant Model", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Unable to load Plant1 Model", Toast.LENGTH_SHORT).show();
                             return null;
                         }
                 );
@@ -117,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .build().thenAccept(renderable -> plant2Renderable = renderable)
                 .exceptionally(
                         throwable -> {
-                            Toast.makeText(this, "Unable to load Plant Model", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Unable to load Plant2 Model", Toast.LENGTH_SHORT).show();
                             return null;
                         }
                 );
@@ -131,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                 );
         ModelRenderable.builder()
-                .setSource(this, R.raw.switches)
+                .setSource(this, R.raw.double_switch_whites)
                 .build().thenAccept(renderable -> switchesRenderable = renderable)
                 .exceptionally(
                         throwable -> {
@@ -271,14 +286,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
     }
 
-    private void addModelToScene(Anchor anchor, ModelRenderable modelRenderable) {
-        AnchorNode anchorNode=new AnchorNode(anchor);
-        TransformableNode transformableNode=new TransformableNode(arFragment.getTransformationSystem());
-        transformableNode.setParent(anchorNode);
-        transformableNode.setRenderable(modelRenderable);
-        arFragment.getArSceneView().getScene().addChild(anchorNode);
-        transformableNode.select();
-    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -293,38 +301,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (view.getId()==R.id.carpet){
             selected = 1;
+            selectedMain.add("carpet");
             setBackground(view.getId());
         }
         else if (view.getId()==R.id.couchTable){
             selected = 2;
+            selectedMain.add("couchTable");
             setBackground(view.getId());
         }
         else if (view.getId()==R.id.sofa){
             selected = 3;
+            selectedMain.add("sofa");
             setBackground(view.getId());
         }
         else if (view.getId()==R.id.plant1){
             selected = 4;
+            selectedMain.add("plant1");
             setBackground(view.getId());
         }
         else if (view.getId()==R.id.plant2){
             selected = 5;
+            selectedMain.add("plant2");
             setBackground(view.getId());
         }
         else if (view.getId()==R.id.lamp){
             selected = 6;
+            selectedMain.add("lamp");
             setBackground(view.getId());
         }
         else if (view.getId()==R.id.switches){
             selected = 7;
+            selectedMain.add("switches");
             setBackground(view.getId());
         }
         else if (view.getId()==R.id.windowcurtain){
             selected = 8;
+            selectedMain.add("windowcurtain");
             setBackground(view.getId());
         }
         else if (view.getId()==R.id.tv){
             selected = 9;
+            selectedMain.add("tv");
             setBackground(view.getId());
         }
     }

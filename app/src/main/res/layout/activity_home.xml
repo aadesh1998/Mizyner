@@ -7,15 +7,15 @@
     tools:context="HomeActivity">
 
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="match_parent"
-        tools:ignore="MissingConstraints"
-        android:layout_height="match_parent"
-        android:id="@+id/animation"
-        app:lottie_loop="true"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="hotel.json"
-        />
+<!--    <com.airbnb.lottie.LottieAnimationView-->
+<!--        android:layout_width="match_parent"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/animation"-->
+<!--        app:lottie_loop="true"-->
+<!--        app:lottie_autoPlay="true"-->
+<!--        app:lottie_fileName="hotel.json"-->
+<!--        />-->
 
 
     <androidx.cardview.widget.CardView

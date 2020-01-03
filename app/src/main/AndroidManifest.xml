@@ -2,14 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mizyner">
 
+    <uses-feature
+        android:name="android.hardware.camera.ar"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CelebrationActivity"></activity>
+        <activity android:name=".SelectedItemActivity"></activity>
+        <activity android:name=".CelebrationActivity" />
         <activity android:name=".OfficeActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".SplashActivity2" />
@@ -28,11 +36,5 @@
             android:name="com.google.ar.core"
             android:value="required" />
     </application>
-
-    <uses-feature
-        android:name="android.hardware.camera.ar"
-        android:required="true" />
-
-    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>

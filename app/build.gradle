@@ -13,8 +13,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
     buildTypes {
         release {
@@ -36,6 +36,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.airbnb.android:lottie:3.0.7'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 }
 
 
@@ -49,9 +53,6 @@ sceneform.asset('Sample Data Directory/christmas_tree.obj',
         'default',
         'Sample Data Directory/christmas_tree.sfa',
         'src/main/assets/christmas_tree')
-
-
-
 
 
 sceneform.asset('Sample Data Directory/Balloon_Arch_v1_L2.123cd6d79410-5d7a-444e-856f-4fac85f29757/13498_Balloon_Arch_v1_l2.obj',
@@ -83,7 +84,6 @@ sceneform.asset('Sample Data Directory/Balloon_Arch_v1_L2.123cd6d79410-5d7a-444e
         'default',
         'Sample Data Directory/Balloon_Arch_v1_L2.123cd6d79410-5d7a-444e-856f-4fac85f29757/13498_Balloon_Arch_v1_l2.sfa',
         'src/main/res/raw/balloon')
-
 
 
 sceneform.asset('Sample Data Directory/eb_house_plant_01/eb_house_plant_01.obj',
@@ -132,9 +132,13 @@ sceneform.asset('Sample Data Directory/office_chair.obj',
         'src/main/res/raw/office_chair')
 
 
-
-
 sceneform.asset('Sample Data Directory/double-switch-whites/double-switch-whites.obj',
         'default',
         'Sample Data Directory/double-switch-whites/double-switch-whites.sfa',
         'src/main/res/raw/switches')
+
+
+sceneform.asset('Sample Data Directory/square-double-switch.obj',
+        'default',
+        'Sample Data Directory/square-double-switch.sfa',
+        'src/main/res/raw/square_double_switch')
