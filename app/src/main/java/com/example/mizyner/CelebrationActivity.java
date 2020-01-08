@@ -21,8 +21,12 @@ import com.google.ar.sceneform.rendering.ViewRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.example.mizyner.MainActivity.selectedMain;
 
 public class CelebrationActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -38,7 +42,11 @@ public class CelebrationActivity extends AppCompatActivity implements View.OnCli
     ImageView plant1;
     @BindView(R.id.plant2)
     ImageView plant2;
+    @BindView(R.id.saveButton)
+    TextView saveButton;
     View arrayView[];
+   // public static ArrayList<String> selectedMain = new ArrayList<>();
+
     int selected = 1;
     private ModelRenderable carpetRenderable,
             balloonRenderable,
@@ -56,7 +64,6 @@ public class CelebrationActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_celebration);
         ButterKnife.bind(this);
         arFragment= (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
-
         arrayView = new View[]{
                 carpet,balloon,christmas, sofa, plant1, plant2
         };
@@ -64,6 +71,21 @@ public class CelebrationActivity extends AppCompatActivity implements View.OnCli
 
         setupModel();
         setClickListener();
+
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(selectedMain.size() == 0){
+
+                    Toast.makeText(CelebrationActivity.this, "Please select atleast one", Toast.LENGTH_SHORT).show();
+                }else{
+                    startActivity(new Intent(getApplicationContext(),SelectedItemActivity.class));
+                }
+
+
+            }
+        });
 
         arFragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
            // Anchor anchor=hitResult.createAnchor();
@@ -157,9 +179,8 @@ public class CelebrationActivity extends AppCompatActivity implements View.OnCli
 
 
     private void setClickListener() {
-        for (int i=0; i<arrayView.length;i++) {
+        for (int i=0; i<arrayView.length;i++)
             arrayView[i].setOnClickListener(this);
-        }
     }
 
     @Override
@@ -167,25 +188,34 @@ public class CelebrationActivity extends AppCompatActivity implements View.OnCli
 
         if (view.getId()== R.id.carpet){
             selected = 1;
+            selectedMain.add("carpet");
             setBackground(view.getId());
         } else if (view.getId()== R.id.balloon){
             selected = 2;
+            selectedMain.add("balloon");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.christmas){
             selected = 3;
+            selectedMain.add("christmas");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.sofa){
             selected = 4;
+            selectedMain.add("sofa");
+
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.plant1){
             selected = 5;
+            selectedMain.add("plant1");
+
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.plant2){
             selected = 6;
+            selectedMain.add("plant2");
+
             setBackground(view.getId());
         }
     }

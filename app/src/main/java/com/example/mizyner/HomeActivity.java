@@ -6,14 +6,16 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 public class HomeActivity extends AppCompatActivity {
-    CardView card_view;
+    LinearLayout card_view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        card_view=findViewById(R.id.cardView1);
+        card_view=findViewById(R.id.homedecor);
+
         card_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -22,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
                 finish();
             }
         });
-        card_view=findViewById(R.id.cardView2);
+        card_view=findViewById(R.id.officedecor);
         card_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
                 finish();
             }
         });
-        card_view=findViewById(R.id.cardView3);
+        card_view=findViewById(R.id.celdecor);
         card_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -21,8 +21,12 @@ import com.google.ar.sceneform.rendering.ViewRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.example.mizyner.MainActivity.selectedMain;
 
 public class OfficeActivity extends AppCompatActivity implements View.OnClickListener {
         @BindView(R.id.carpet)
@@ -49,8 +53,12 @@ public class OfficeActivity extends AppCompatActivity implements View.OnClickLis
     ImageView windowcurtain;
     @BindView(R.id.tv)
     ImageView tv;
+    @BindView(R.id.saveButton)
+    TextView saveButton;
+
     View arrayView[];
     ViewRenderable name_object;
+  //  public static ArrayList<String> selectedMain = new ArrayList<>();
     int selected = 1;
         private ArFragment arFragment;
     private ModelRenderable carpetRenderable,
@@ -81,6 +89,22 @@ public class OfficeActivity extends AppCompatActivity implements View.OnClickLis
         setupModel();
 
 
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(selectedMain.size() == 0){
+
+                    Toast.makeText(OfficeActivity.this, "Please select atleast one", Toast.LENGTH_SHORT).show();
+                }else{
+                    startActivity(new Intent(getApplicationContext(),SelectedItemActivity.class));
+                }
+
+
+            }
+        });
+
+
         arFragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
 
             Anchor anchor = hitResult.createAnchor();
@@ -107,49 +131,61 @@ public class OfficeActivity extends AppCompatActivity implements View.OnClickLis
 
         if (view.getId()== R.id.carpet){
             selected = 1;
+            selectedMain.add("carpet");
             setBackground(view.getId());
         } else if (view.getId()== R.id.chair){
             selected = 2;
+            selectedMain.add("chair");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.laptop){
             selected = 3;
+            selectedMain.add("laptop");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.desk){
             selected = 4;
+            selectedMain.add("desk");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.couchTable){
             selected = 5;
+            selectedMain.add("couchTable");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.sofa){
             selected = 6;
+            selectedMain.add("sofa");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.plant1){
             selected = 7;
+            selectedMain.add("plant1");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.plant2){
             selected = 8;
+            selectedMain.add("plant2");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.lamp){
             selected = 9;
+            selectedMain.add("lamp");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.switches){
             selected = 10;
+            selectedMain.add("switches");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.windowcurtain){
             selected = 11;
+            selectedMain.add("windowcurtain");
             setBackground(view.getId());
         }
         else if (view.getId()== R.id.tv){
             selected = 12;
+            selectedMain.add("tv");
             setBackground(view.getId());
         }
     }
