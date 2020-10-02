@@ -6,15 +6,17 @@ android {
     buildToolsVersion "30.0.0"
     defaultConfig {
         applicationId "com.example.mizyner"
+
         minSdkVersion 17
         targetSdkVersion 30
+
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
     buildTypes {
         release {
@@ -28,13 +30,19 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.5.1'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.6.0'
 //    implementation 'com.google.ar.sceneform:core:1.5.1'
 //    implementation 'com.google.ar:core:1.5.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.airbnb.android:lottie:3.0.7'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
 }
 
 
@@ -44,12 +52,96 @@ sceneform.asset('Sample Data Directory/office_chair.obj',
         'src/main/assets/office_chair')
 
 
-sceneform.asset('Sample Data Directory/couchTable.obj',
-        'default',
-        'Sample Data Directory/couchTable.sfa',
-        'src/main/assets/couchTable')
-
 sceneform.asset('Sample Data Directory/christmas_tree.obj',
         'default',
         'Sample Data Directory/christmas_tree.sfa',
         'src/main/assets/christmas_tree')
+
+
+sceneform.asset('Sample Data Directory/Balloon_Arch_v1_L2.123cd6d79410-5d7a-444e-856f-4fac85f29757/13498_Balloon_Arch_v1_l2.obj',
+        'default',
+        'Sample Data Directory/Balloon_Arch_v1_L2.123cd6d79410-5d7a-444e-856f-4fac85f29757/13498_Balloon_Arch_v1_l2.sfa',
+        'src/main/res/raw/ballonarch/13498_Balloon_Arch_v1_l2')
+
+sceneform.asset('Sample Data Directory/boxwood_plant_obj/boxwood_plant.obj',
+        'default',
+        'Sample Data Directory/boxwood_plant_obj/boxwood_plant.sfa',
+        'src/main/res/raw/plant2')
+
+sceneform.asset('Sample Data Directory/Balloon_Arch_v1_L2.123cd6d79410-5d7a-444e-856f-4fac85f29757/13498_Balloon_Arch_v1_l2.obj',
+        'default',
+        'Sample Data Directory/Balloon_Arch_v1_L2.123cd6d79410-5d7a-444e-856f-4fac85f29757/13498_Balloon_Arch_v1_l2.sfa',
+        'src/main/res/raw/balloonarch')
+
+sceneform.asset('Sample Data Directory/carpet/carpet.obj',
+        'default',
+        'Sample Data Directory/carpet/carpet.sfa',
+        'src/main/res/raw/carpet')
+
+sceneform.asset('Sample Data Directory/desk/bureau3.obj',
+        'default',
+        'Sample Data Directory/desk/bureau3.sfa',
+        'src/main/res/raw/desk')
+
+sceneform.asset('Sample Data Directory/Balloon_Arch_v1_L2.123cd6d79410-5d7a-444e-856f-4fac85f29757/13498_Balloon_Arch_v1_l2.obj',
+        'default',
+        'Sample Data Directory/Balloon_Arch_v1_L2.123cd6d79410-5d7a-444e-856f-4fac85f29757/13498_Balloon_Arch_v1_l2.sfa',
+        'src/main/res/raw/balloon')
+
+
+sceneform.asset('Sample Data Directory/eb_house_plant_01/eb_house_plant_01.obj',
+        'default',
+        'Sample Data Directory/eb_house_plant_01/eb_house_plant_01.sfa',
+        'src/main/res/raw/plant1')
+
+sceneform.asset('Sample Data Directory/k6sls4z9suf4-VenetianBlind/VenetianBlind.obj',
+        'default',
+        'Sample Data Directory/k6sls4z9suf4-VenetianBlind/VenetianBlind.sfa',
+        'src/main/res/raw/curtain')
+
+sceneform.asset('Sample Data Directory/lamp/lamp.obj',
+        'default',
+        'Sample Data Directory/lamp/lamp.sfa',
+        'src/main/res/raw/lamp')
+
+sceneform.asset('Sample Data Directory/laptop/laptop.obj',
+        'default',
+        'Sample Data Directory/laptop/laptop.sfa',
+        'src/main/res/raw/laptop')
+
+sceneform.asset('Sample Data Directory/sofa2/sofa2.obj',
+        'default',
+        'Sample Data Directory/sofa2/sofa2.sfa',
+        'src/main/res/raw/sofa2')
+
+sceneform.asset('Sample Data Directory/wall-flat-tv/wall-flat-tv.obj',
+        'default',
+        'Sample Data Directory/wall-flat-tv/wall-flat-tv.sfa',
+        'src/main/res/raw/wall_flat_tv')
+
+sceneform.asset('Sample Data Directory/christmas_tree.obj',
+        'default',
+        'Sample Data Directory/christmas_tree.sfa',
+        'src/main/res/raw/christmas_tree')
+
+sceneform.asset('Sample Data Directory/couchtable.obj',
+        'default',
+        'Sample Data Directory/couchtable.sfa',
+        'src/main/res/raw/couchtable')
+
+sceneform.asset('Sample Data Directory/office_chair.obj',
+        'default',
+        'Sample Data Directory/office_chair.sfa',
+        'src/main/res/raw/office_chair')
+
+
+sceneform.asset('Sample Data Directory/double-switch-whites/double-switch-whites.obj',
+        'default',
+        'Sample Data Directory/double-switch-whites/double-switch-whites.sfa',
+        'src/main/res/raw/switches')
+
+
+sceneform.asset('Sample Data Directory/square-double-switch.obj',
+        'default',
+        'Sample Data Directory/square-double-switch.sfa',
+        'src/main/res/raw/square_double_switch')

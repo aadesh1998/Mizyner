@@ -1,0 +1,133 @@
+{
+  materials: [
+    {
+      name: 'black-hooks',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.01391,
+            0.01391,
+            0.01391,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.123367,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'decoration',
+      parameters: [
+        {
+          baseColor: 'texture-tv',
+        },
+        {
+          baseColorTint: [
+            0.18641199999999999,
+            0.18641199999999999,
+            0.18641199999999999,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.356626,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'screen-tv',
+      parameters: [
+        {
+          baseColor: 'tv-screen',
+        },
+        {
+          baseColorTint: [
+            0.043975,
+            0.043975,
+            0.043975,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.45076300000000002,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'tv-black',
+      parameters: [
+        {
+          baseColor: 'texture-tv',
+        },
+        {
+          baseColorTint: [
+            0.015079,
+            0.015079,
+            0.015079,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.356626,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'Sample Data Directory/wall-flat-tv/wall-flat-tv.obj',
+    name: 'wall-flat-tv',
+    recenter: 'root',
+    scale: 0.0091863,
+  },
+  samplers: [
+    {
+      file: 'Sample Data Directory/wall-flat-tv\\texture-tv.jpg',
+      name: 'texture-tv',
+      pipeline_name: 'texture-tv.jpg',
+    },
+    {
+      file: 'Sample Data Directory/wall-flat-tv\\tv-screen.jpg',
+      name: 'tv-screen',
+      pipeline_name: 'tv-screen.jpg',
+    },
+  ],
+  version: '0.52:1',
+}

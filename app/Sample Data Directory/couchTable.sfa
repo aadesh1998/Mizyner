@@ -37,7 +37,7 @@
     file: 'Sample Data Directory/couchTable.obj',
     name: 'couchTable',
     recenter: 'root',
-    scale: 0.022727000000000001,
+    scale: 0.00711,
   },
   version: '0.52:1',
 }

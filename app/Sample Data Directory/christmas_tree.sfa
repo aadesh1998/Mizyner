@@ -167,7 +167,7 @@
     file: 'Sample Data Directory/christmas_tree.obj',
     name: 'christmas_tree',
     recenter: 'root',
-    scale: 0.0078270000000000006,
+    scale: 0.0038270000000000006,
   },
   version: '0.52:1',
 }
