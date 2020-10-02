@@ -8,6 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+public class Hacktober{
+    public void hacktoberDemo(){
+        System.out.println("This is HacktoberFest Demo);
+    }
+}
+
 public class HomeActivity extends AppCompatActivity {
     LinearLayout card_view;
     @Override
