@@ -7,6 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+public class Hacktober{
+    public void hacktoberDemo(){
+        System.out.println("This is HacktoberFest Demo);
+    }
+}
+
 public class HomeActivity extends AppCompatActivity {
     CardView card_view;
     @Override
